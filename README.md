@@ -12,12 +12,12 @@ Design the **data model** for a _recipe book_ application and use Knex migration
 
 The requirements for the system as stated by the client are:
 
-- Recipes have a name that must be unique (e.g. "Spaghetti Bolognese").
-- Recipes contain an ordered list of steps (e.g. "Preheat the oven", "Roast the squash").
-- Each step contains some instructions (e.g. "Preheat the oven") and belongs to a single recipe.
-- Steps might involve any number of ingredients (zero, one or more).
-- If a step involves one or more ingredients, each ingredient is used in a certain quantity.
-- Ingredients can be used in different recipes, in different quantities.
+-X Recipes have a name that must be unique (e.g. "Spaghetti Bolognese").
+-X Recipes contain an ordered list of steps (e.g. "Preheat the oven", "Roast the squash").
+-X Each step contains some instructions (e.g. "Preheat the oven") and belongs to a single recipe.
+-X Steps might involve any number of ingredients (zero, one or more).
+-X If a step involves one or more ingredients, each ingredient is used in a certain quantity.
+-X Ingredients can be used in different recipes, in different quantities.
 
 #### Data Model
 
@@ -49,7 +49,7 @@ After brainstorming with the team it is suggested that a **JSON representation**
 
 The JSON representation above is the result of querying data from several tables using SQL joins, and then using JavaScript to hammer the data into that particular shape.
 
-Note that it's unlikely all the fields `{ "ingredient_id": 27, "ingredient_name": "olive oil", "quantity": 0.014 }` come from the same table. Otherwise an ingredient could only ever be used in a fixed quantity!
+Note that it's unlikely all the fields `{ "ingredient_id": 27, "ingredient_name": "olive oil", "quantity": 0.014 }` come from the same table. Otherwise, an ingredient could only ever be used in a fixed quantity!
 
 Before writing any code, write out all desired tables in the data model and determine the relationships between tables.
 
@@ -57,21 +57,24 @@ Before writing any code, write out all desired tables in the data model and dete
 
 #### Project Scaffolding
 
-- Put an Express application together starting with the `package.json` and a `knexfile.js`. Use existing projects as reference if needed.
+-X Put an Express application together starting with the `package.json` and a `knexfile.js`. Use existing projects as reference if needed.
 
 #### Migrations and Seeds
 
-- Write a migration file that creates all tables necessary to model this data
-- Write seed files to populate the tables with test data. **Hint**: Keep your recipes simple or this step could become extremely time consuming.
+-X Write a migration file that creates all tables necessary to model this data
+
+-X Write seed files to populate the tables with test data. **Hint**: Keep your recipes simple or this step could become extremely time-consuming.
 
 #### Data Access
 
 Write a data access file that exports an object with the following function:
 
-- `getRecipeById(recipe_id)`
-  - Should resolve a representation of the recipe similar to the one shown in the **Data Model** above.
-  - The function will pull information from several tables using Knex and then create a response object using loops, objects, array methods etc.
-  - There are many ways to solve this, but from a performance standpoint the fewer trips to the database the better!
+-X `getRecipeById(recipe_id)`
+  -X Should resolve a representation of the recipe similar to the one shown in the **Data Model** above.
+
+  -X The function will pull information from several tables using Knex and then create a response object using loops, objects, array methods etc.
+
+  -X There are many ways to solve this, but from a performance standpoint the fewer trips to the database the better!
 
 #### Endpoint
 
