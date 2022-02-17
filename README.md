@@ -49,7 +49,7 @@ After brainstorming with the team it is suggested that a **JSON representation**
 
 The JSON representation above is the result of querying data from several tables using SQL joins, and then using JavaScript to hammer the data into that particular shape.
 
-Note that it's unlikely all the fields `{ "ingredient_id": 27, "ingredient_name": "olive oil", "quantity": 0.014 }` come from the same table. Otherwise an ingredient could only ever be used in a fixed quantity!
+Note that it's unlikely all the fields `{ "ingredient_id": 27, "ingredient_name": "olive oil", "quantity": 0.014 }` come from the same table. Otherwise, an ingredient could only ever be used in a fixed quantity!
 
 Before writing any code, write out all desired tables in the data model and determine the relationships between tables.
 
@@ -57,11 +57,11 @@ Before writing any code, write out all desired tables in the data model and dete
 
 #### Project Scaffolding
 
-- Put an Express application together starting with the `package.json` and a `knexfile.js`. Use existing projects as reference if needed.
+-X Put an Express application together starting with the `package.json` and a `knexfile.js`. Use existing projects as reference if needed.
 
 #### Migrations and Seeds
 
-- Write a migration file that creates all tables necessary to model this data
+-X Write a migration file that creates all tables necessary to model this data
 - Write seed files to populate the tables with test data. **Hint**: Keep your recipes simple or this step could become extremely time consuming.
 
 #### Data Access
